@@ -6,7 +6,7 @@
     <link rel="icon" href="./images/favicon.svg">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/script.js"></script>
     <title>Andrej's Calculator</title>
 </head>
 <body>
@@ -14,10 +14,10 @@
         <div class="calculator">
             <div class="calculator-screen">
                 <div class="calculation">
-                    <p>12 + 12</p>
+                    <p id="calculation-display">12 + 12</p>
                 </div>
                 <div class="result">
-                    <p>24</p>
+                    <p id="current-number">24</p>
                 </div>
             </div>
             <div class="commands-container">
@@ -27,28 +27,28 @@
                         <button id="clear-all">CA</button>
                     </div>
                     <div class="row">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                        <button>÷</button>
+                        <button class="number">7</button>
+                        <button class="number">8</button>
+                        <button class="number">9</button>
+                        <button class="operator">÷</button>
                     </div>
                     <div class="row">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>×</button>
+                        <button class="number">4</button>
+                        <button class="number">5</button>
+                        <button class="number">6</button>
+                        <button class="operator">×</button>
                     </div>
                     <div class="row">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>−</button>
+                        <button class="number">1</button>
+                        <button class="number">2</button>
+                        <button class="number">3</button>
+                        <button class="operator">−</button>
                     </div>
                     <div class="row">
                         <button>.</button>
-                        <button>0</button>
-                        <button>=</button>
-                        <button>+</button>
+                        <button class="number">0</button>
+                        <button id="equals">=</button>
+                        <button class="operator">+</button>
                     </div>
                 </div>
             </div>
