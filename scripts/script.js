@@ -34,7 +34,7 @@ class Calculator {
 
         document.getElementById('equalsButton').addEventListener('click', () => {
             this.playClickSound();
-            this.evaluate();
+            this.operate();
         });
 
         document.getElementById('clearButton').addEventListener('click', () => {
@@ -46,11 +46,50 @@ class Calculator {
             this.playClickSound();
             this.deleteLastDigit();
         });
+
+        document.addEventListener('keydown', (event) => this.handleKeyboardInput(event));
     }
 
     playClickSound() {
         this.clickSound.currentTime = 0;
         this.clickSound.play();
+    }
+
+    handleKeyboardInput(event) {
+        if (event.key >= '0' && event.key <= '9') {
+            this.playClickSound();
+            this.appendNumber(event.key);
+        } else if (event.key === '.') {
+            this.playClickSound();
+            this.appendDecimal();
+        } else if (event.key === '=' || event.key === 'Enter') {
+            this.playClickSound();
+            this.operate();
+        } else if (event.key === 'Backspace') {
+            this.playClickSound();
+            this.deleteLastDigit();
+        } else if (event.key === 'Escape') {
+            this.playClickSound();
+            this.clear();
+        } else if (['+', '-', '*', '/'].includes(event.key)) {
+            this.playClickSound();
+            this.setOperator(this.convertOperator(event.key));
+        }
+    }
+
+    convertOperator(key) {
+        switch (key) {
+            case '+':
+                return '+';
+            case '-':
+                return '−';
+            case '*':
+                return '×';
+            case '/':
+                return '÷';
+            default:
+                return null;
+        }
     }
 
     appendNumber(number) {
@@ -94,7 +133,7 @@ class Calculator {
 
     setOperator(operator) {
         if (this.currentOperator !== null) {
-            this.evaluate();
+            this.operate();
         }
         this.firstValue = this.currentValue;
         this.currentOperator = operator;
@@ -102,7 +141,7 @@ class Calculator {
         this.updateOperationDisplay();
     }
 
-    evaluate() {
+    operate() {
         if (this.currentOperator === null || this.shouldResetScreen) return;
         this.secondValue = this.currentValue;
         if (this.currentOperator === "÷" && this.currentValue === "0") {
