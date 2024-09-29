@@ -8,7 +8,7 @@
     4px 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-.calculator-screen {
+.calculator-display {
     display: flex;
     flex-direction: column;
     background-color: var(--color-background-secondary);
@@ -17,50 +17,54 @@
     min-height: 133px;
 }
 
-.calculation, .result {
+.previous-operation {
+    min-height: 44px;
+}
+
+.previous-operation, .current-operation {
     display: flex;
     justify-content: flex-end;
     padding: 0px 24px 0px 0px;
 }
 
-.calculation > p {
+.previous-operation > p {
     margin-top: 16px;
     font-size: 24px;
 }
 
-.result > p {
+.current-operation > p {
     margin: 16px 0px;
     font-size: 48px;
 }
 
-/* Commands */
+/* Button Container */
 
-.commands {
+.button-container {
     margin: 0 40px 0;
 }
 
-.commands {
+.button-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.row {
+.button-row {
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
 }
 
-.row button{
+.button-row button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#clear-entry {
+#clearButton {
     background-color: var(--color-secondary-main);
 }
 
-#clear-all {
+#deleteButton {
     background-color: var(--color-secondary-dark);
 }

@@ -6,53 +6,52 @@
     <link rel="icon" href="./images/favicon.svg">
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.js" defer></script>
     <title>Andrej's Calculator</title>
 </head>
 <body>
     <main>
         <div class="calculator">
-            <div class="calculator-screen">
-                <div class="calculation">
-                    <p id="calculation-display">12 + 12</p>
+            <div class="calculator-display">
+                <div class="previous-operation">
+                    <p id="previousOperationDisplay"></p>
                 </div>
-                <div class="result">
-                    <p id="current-number">24</p>
-                </div>
-            </div>
-            <div class="commands-container">
-                <div class="commands">
-                    <div class="row">
-                        <button id="clear-entry">CE</button>
-                        <button id="clear-all">CA</button>
-                    </div>
-                    <div class="row">
-                        <button class="number">7</button>
-                        <button class="number">8</button>
-                        <button class="number">9</button>
-                        <button class="operator">÷</button>
-                    </div>
-                    <div class="row">
-                        <button class="number">4</button>
-                        <button class="number">5</button>
-                        <button class="number">6</button>
-                        <button class="operator">×</button>
-                    </div>
-                    <div class="row">
-                        <button class="number">1</button>
-                        <button class="number">2</button>
-                        <button class="number">3</button>
-                        <button class="operator">−</button>
-                    </div>
-                    <div class="row">
-                        <button>.</button>
-                        <button class="number">0</button>
-                        <button id="equals">=</button>
-                        <button class="operator">+</button>
-                    </div>
+                <div class="current-operation">
+                    <p id="currentOperationDisplay">0</p>
                 </div>
             </div>
 
+            <div class="button-container">
+                <div class="button-row">
+                    <button id="clearButton">CA</button>
+                    <button id="deleteButton">CE</button>
+                </div>
+                
+                <div class="button-row">
+                    <button class="number-button">7</button>
+                    <button class="number-button">8</button>
+                    <button class="number-button">9</button>
+                    <button class="operator-button">÷</button>
+                </div>
+                <div class="button-row">
+                    <button class="number-button">4</button>
+                    <button class="number-button">5</button>
+                    <button class="number-button">6</button>
+                    <button class="operator-button">×</button>
+                </div>
+                <div class="button-row">
+                    <button class="number-button">1</button>
+                    <button class="number-button">2</button>
+                    <button class="number-button">3</button>
+                    <button class="operator-button">−</button>
+                </div>
+                <div class="button-row">
+                    <button class="number-button">.</button>
+                    <button class="number-button">0</button>
+                    <button id="equalsButton">=</button>
+                    <button class="operator-button">+</button>
+                </div>
+            </div>
         </div>
     </main>
 </body>
