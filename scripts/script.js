@@ -38,7 +38,6 @@ class Calculator {
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const calculator = new Calculator()
 
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('clear-entry').addEventListener('click', () => {
         calculator.clearEntry()
     })
-
 })
 
 
